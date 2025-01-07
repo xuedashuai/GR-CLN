@@ -11,12 +11,16 @@ The code was written in the following environment:
 ## Preparation for data:
 The raw data of INTERACTION is downloadable at https://interaction-dataset.com/
 - Our data interface is improved based on D-GSM (https://github.com/BIT-Jack/D-GSM). 
-- Put the raw data into `./raw`
 - Run `/datasets/preprocess_for_learning.py` to preprocess the data for GR-CLN.
 - Run `/datasets/gen_temp.py` to enhance the efficiency of data loading during multiple training sessions in continual learning. 
 
 ## Using the code:
-To use the pretrained models at `./trained_models` and evaluate the models performance run:  
+First, select the corresponding bash command from train_OUR_D.sh to pre-train the decoder：  
 ```
-python evaluate.py
+bash train_OUR_D.sh
+```
+
+Then, load the weights of the corresponding pre-trained decoder and select a bash command from train_OUR_E.sh to train and test the decoder：
+```
+bash train_OUR_E.sh
 ```
